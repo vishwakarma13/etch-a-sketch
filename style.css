@@ -1,0 +1,12 @@
+#container {
+    display: flex;
+    flex-wrap: wrap;
+
+}
+
+.gridDiv {
+    width: 100px;
+    height: 100px;
+    outline: 5px solid red;
+    margin: 20px;
+}
