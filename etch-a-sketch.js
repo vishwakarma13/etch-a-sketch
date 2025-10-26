@@ -7,11 +7,9 @@ let button = document.querySelector("button");//button is selected for adding ev
 button.addEventListener("click", ()=>
   {
     let numVariable = parseInt(prompt("Enter a number between 1 to 100 :"))//parseint to convert user input to number
-
-    if (numVariable<=100) {
-
-      for (let i=0; i<(numVariable*numVariable); i++) 
-      {
+  
+    if (numVariable>=1 && numVariable<=100){
+      for (let i=0; i<(numVariable*numVariable); i++) {
         let createdDiv =document.createElement("div");
         createdDiv.classList.add("gridDiv");
 
@@ -21,14 +19,21 @@ button.addEventListener("click", ()=>
 
 
         //to change bgcolor of grid divs on mouse hover
-        createdDiv.addEventListener('mouseenter', (e) => 
-          {
+        createdDiv.addEventListener('mouseenter', (e) => {
             e.target.style.backgroundColor = generateRandomRgbColor();
           }
         );
         containerDiv.appendChild(createdDiv);
       }
-    }  
+    }
+    
+    else {
+      let warningLine = document.createElement("h1");
+      warningLine.textContent = "INVALID NUMBER : Number must be between 1 and 100";
+      warningLine.style.color = "red";
+      containerDiv.appendChild(warningLine);
+    }
+    
   } //arrow function ends here
 ); //addeventlistener method ends here
 
