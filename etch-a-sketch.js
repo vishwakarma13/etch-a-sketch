@@ -8,26 +8,27 @@ button.addEventListener("click", ()=>
   {
     let numVariable = parseInt(prompt("Enter a number between 1 to 100 :"))//parseint to convert user input to number
   
-    if (numVariable>=1 && numVariable<=100){
-      for (let i=0; i<(numVariable*numVariable); i++) {
+    if (numVariable>=1 && numVariable<=100){ //to check if the entered num is between 1 and 100
+
+      for (let i=0; i<(numVariable*numVariable); i++) {//to create the required number of grid divs
         let createdDiv =document.createElement("div");
         createdDiv.classList.add("gridDiv");
 
-        //adding length and breadth to createdDiv
+        //to add the same number of grid divs vertically and horizontally
         createdDiv.style.width = (((500/numVariable)/500)*100)+"%";
         createdDiv.style.paddingBottom = (((500/numVariable)/500*100)+"%");
-
 
         //to change bgcolor of grid divs on mouse hover
         createdDiv.addEventListener('mouseenter', (e) => {
             e.target.style.backgroundColor = generateRandomRgbColor();
           }
         );
-        containerDiv.appendChild(createdDiv);
+
+        containerDiv.appendChild(createdDiv);//to add the grid divs to container div after applying the above conditions and properties to grid divs
       }
     }
     
-    else {
+    else { //for warning if the number exceeds the accepted range
       let warningLine = document.createElement("h1");
       warningLine.textContent = "INVALID NUMBER : Number must be between 1 and 100";
       warningLine.style.color = "red";
