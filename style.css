@@ -3,6 +3,7 @@
     flex-wrap: wrap;
     margin-left: 25%;
     margin-right: 25%;
+    outline: 1px solid black;
 }
 
 .gridDiv {
